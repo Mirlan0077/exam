@@ -1,0 +1,21 @@
+{% extends 'guestbook/base.html' %}
+
+{% block content %}
+    <h2 class="mb-4">Редактировать запись</h2>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="id_author_name">Имя:</label>
+            <input type="text" name="author_name" id="id_author_name" value="{{ form.author_name.value }}" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="id_author_email">Email:</label>
+            <input type="email" name="author_email" id="id_author_email" value="{{ form.author_email.value }}" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="id_entry_text">Текст:</label>
+            <textarea name="entry_text" id="id_entry_text" rows="4" class="form-control">{{ form.entry_text.value }}</textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Сохранить</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,6 @@
+myenv/
+__pycache__/
+*.pyc
+db.sqlite3
+*.sqlite3
+guestbook/migrations/
